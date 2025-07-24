@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Appointment;
-use Illuminate\Routing\Controller;
-
+use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
@@ -13,9 +11,11 @@ class AppointmentController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        // Logic to retrieve and return a list of appointments
-        return response()->json(Appointment::orderBy('date')->orderBy('time')->get());
+    {   
+        
+        return response()->json([
+            Appointment::orderBy('date')->orderBy('time')->get()
+        ]);
     }
 
     /**
@@ -23,14 +23,16 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validate = $request->validate([
             'date' => 'required|date',
-            'time' => 'required',
-            'name' => 'required|string|max:255',
+            'time' => 'required|date_format:H:i',
+            'title' => 'required|string|max:255',
+            'service' => 'required|integer|max:255',
         ]);
-        Appointment::create($request->all());
-        // Logic to create a new appointment
-        return response()->json(['message' => 'Appointment created successfully']);
+
+        $appointment = Appointment::create($validate);
+
+        return response()->json($appointment, 201);
     }
 
     /**
@@ -38,7 +40,9 @@ class AppointmentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $appointment = Appointment::findOrFail($id);
+
+        return response()->json($appointment);
     }
 
     /**
@@ -46,15 +50,18 @@ class AppointmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'date' => 'sometimes|required|date',
-            'time' => 'sometimes|required',
-            'name' => 'required|string|max:255',
-        ]);
         $appointment = Appointment::findOrFail($id);
-        $appointment->update($request->all());
-        // Logic to update an existing appointment
-        return response()->json(['message' => 'Appointment updated successfully']);
+
+        $validate = $request->validate([
+            'date' => 'required|date',
+            'time' => 'required|date_format:H:i',
+            'title' => 'required|string|max:255',
+            'service' => 'required|integer|max:255',
+        ]);
+
+        $appointment->update($validate);
+
+        return response()->json($appointment);
     }
 
     /**
@@ -64,7 +71,7 @@ class AppointmentController extends Controller
     {
         $appointment = Appointment::findOrFail($id);
         $appointment->delete();
-        // Logic to delete an appointment
-        return response()->json(['message' => 'Appointment deleted successfully']);
+
+        return response()->json(null, 204);
     }
 }
