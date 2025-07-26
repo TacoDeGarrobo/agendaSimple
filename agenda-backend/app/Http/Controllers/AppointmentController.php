@@ -11,11 +11,11 @@ class AppointmentController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
-        
-        return response()->json([
+    {
+
+        return response()->json(
             Appointment::orderBy('date')->orderBy('time')->get()
-        ]);
+        );
     }
 
     /**
@@ -27,7 +27,7 @@ class AppointmentController extends Controller
             'date' => 'required|date',
             'time' => 'required|date_format:H:i',
             'title' => 'required|string|max:255',
-            'service' => 'required|integer|max:255',
+            'service' => 'nullable|integer|max:255',
         ]);
 
         $appointment = Appointment::create($validate);
