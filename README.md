@@ -29,26 +29,26 @@ Lista para ejecutarse con Docker y pensada como proyecto de portafolio o base pa
 ## 🖼️ Vista previa
 
 <h3>Pantalla principal</h3>
-<img width="1906" height="891" alt="pantalla-principal" src="https://github.com/user-attachments/assets/75bf8c49-e01a-4032-9dc0-093603de3c25" /> <br>
+<img width="1906" height="891" alt="pantalla-principal" src="/screenshots/01-pantalla-principal.png"/> <br>
 
 <h3>Validacion de fecha no disponible</h3>
-<img width="1234" height="861" alt="validacion-fecha-no-disponible" src="https://github.com/user-attachments/assets/fd951253-5c08-4364-82dc-c31ced4fe325" /><br>
+<img width="1234" height="861" alt="validacion-fecha-no-disponible" src="/screenshots/02-validacion-fecha-no-disponible.png"/><br>
 
 <h3>Creacion de cita exitosa</h3>
-<img width="1230" height="956" alt="creacion-de-cita-exitosa" src="https://github.com/user-attachments/assets/ee69f038-8b9a-44d5-8aaf-ae6669bf931e" /><br>
+<img width="1230" height="956" alt="creacion-de-cita-exitosa" src="/screenshots/03-creacion-de-cita-exitosa.png"/><br>
 
 <h3>Bloqueo de horario ocupado</h3>
-<img width="1062" height="836" alt="bloque-de-horario-ocupado" src="https://github.com/user-attachments/assets/12d80ecf-52f3-4c2d-83bc-6956e7678537" /><br>
+<img width="1062" height="836" alt="bloque-de-horario-ocupado" src="/screenshots/04-bloqueo-de-horario-ocupado.png"/><br>
 
 <h3>Servicios disponibles</h3> <br>
-<img width="799" height="323" alt="servicio-2" src="https://github.com/user-attachments/assets/e6e427e6-454b-4b8b-a4d3-f28fd7d5eb12" /><br>
-<img width="808" height="353" alt="servicio-3" src="https://github.com/user-attachments/assets/6af74096-58f3-4e3f-9ca6-9d7eab71aa86" /><br>
+<img width="799" height="323" alt="servicio-2" src="/screenshots/05-servicio-3.png" /><br>
+<img width="808" height="353" alt="servicio-3" src="/screenshots/06-servicio-2.png" /><br>
 
 <h3>Base de datos con cita guardada</h3>
-<img width="1063" height="471" alt="db-con-cita-creada" src="https://github.com/user-attachments/assets/9c51c4ed-58b6-4207-9e08-ff3ad1c8ab4c" /><br>
+<img width="1063" height="471" alt="db-con-cita-creada" src="/screenshots/07-db-con-cita-creada.png" /><br>
 
 <h3>Backend en ejecucion</h3>
-<img width="1118" height="316" alt="backend-en-ejecucion" src="https://github.com/user-attachments/assets/6dcd0b6d-55a7-49b7-a1f6-4f7bd97542c5" />
+<img width="1118" height="316" alt="backend-en-ejecucion" src="/screenshots/08-backend-en-ejecucion.png" />
 
 ---
 
