@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { resolveDirective } from 'vue'
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -10,13 +11,15 @@ export const getAppointments = async () => {
 }
 
 export const createAppointment = async (data) => {
-  await api.post('/appointments', data)
+  const res = await api.post('/appointments', data)
+  return res.data
 }
 
 export const deleteAppointment = async (id) => {
-    await api.delete('/appointments/${id}')
+    await api.delete(`/appointments/${id}`)
 }
 
-export const editAppointment = async (data) => {
-    await api.update('/appointments', data)
+export const editAppointment = async (id, data) => {
+  const res = await api.put(`/appointments/${id}`, data)
+  return res.data
 }

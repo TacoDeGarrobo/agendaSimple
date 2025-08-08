@@ -7,7 +7,7 @@
     <ul v-else class="space-y-2 rounded-box shadow-md list bg-base-100">
       <li v-for="appointment in store.list" :key="appointment.id" class="list-row">
         <p class="font-semibold text-xl uppercase">{{ appointment.title }} </p>
-        <p class="font-semibold text-l">{{ services[appointment.service] }}</p>
+        <p class="font-semibold text-l">{{ services[appointment.service - 1] }}</p>
         <p class="text-sm text-gray-500">{{ appointment.date }} a las {{ appointment.time }}</p>
       </li>
     </ul>
@@ -21,9 +21,9 @@ import { useAppointmentsStore } from '../stores/appointments'
 const store = useAppointmentsStore()
 
 const services= [
-    'Servicio 1',
-    'Servicio 2',
-    'Servicio 3'
+    'Instalación GPS para Autos Particulares',
+    'GPS para Flotillas Comerciales',
+    'GPS Antirrobo con Corte de Corriente Remoto'
 ]
 
 onMounted(() => {
